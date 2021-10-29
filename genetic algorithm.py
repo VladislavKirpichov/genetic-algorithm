@@ -1,15 +1,15 @@
 import random
 import matplotlib.pyplot as plt
 
-# константы
-LENGTH = 100                # длина строки
-POPULATION_LENGTH = 100    # количество индивидуумов в популяции
-P_CROSSOVER = 0.8           # вероятность скрещивания
-P_MUTATION = 0.1            # вероятность мутации
-MAX_GENERATIONS = 200       # максимальное количество поколений
+# constants
+LENGTH = 100                # line length
+POPULATION_LENGTH = 100     # number of individuals in the population
+P_CROSSOVER = 0.8           # crossover probability
+P_MUTATION = 0.1            # mutation probability
+MAX_GENERATIONS = 200       # maximum number of generations
 
-maxFitnessValues = []       # максимальная приспособленность в популяции
-meanFitnessValues = []      # средняя приспособленность в популяции
+maxFitnessValues = []       # maximum fitness in the population
+meanFitnessValues = []      # average fitness in the population
 
 
 class Fitness():
@@ -32,7 +32,7 @@ population = [Individual([random.randint(0, 1) for i in range(LENGTH)]) for i in
 
 fitnessValues = list(map(makeFitness, population))
 
-for individual, value in zip(population, fitnessValues):  # считаем приспособленность
+for individual, value in zip(population, fitnessValues):  # consider fitness
     individual.fitness.values[0] = value
 
 
